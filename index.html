@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAMPUS — студенческий портал</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="campusApp">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo" aria-label="Логотип CAMPUS">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <path d="M9 22Q21 16 32 25V49Q21 40 9 45Z" fill="#fff" stroke="#dce2ff" stroke-width="2"/>
+          <path d="M55 22Q43 16 32 25V49Q43 40 55 45Z" fill="#e0e5ff" stroke="#fff" stroke-width="2"/>
+          <path d="M32 25V49" stroke="#747bea" stroke-width="2"/>
+          <path d="M16 29Q23 26 27 30M16 35Q23 32 27 36M48 29Q41 26 37 30M48 35Q41 32 37 36" stroke="#777fe0" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M32 5L35.5 12L43 13L37.5 18L39 25L32 21L25 25L26.5 18L21 13L28.5 12Z" fill="#ffe59a" stroke="#fff2c8" stroke-width="1"/>
+          <path d="M19 18L11 13M45 18L53 13" stroke="#dce2ff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div><div class="brand-name">CAMPUS</div><div class="brand-sub">СТУДЕНЧЕСКИЙ ПОРТАЛ</div></div>
+    </div>
+    <div class="menu-caption">ГЛАВНОЕ МЕНЮ</div>
+    <nav id="navigation">
+      <button class="nav-item active" data-page="home"><span>⌂</span> Главная</button>
+      <button class="nav-item" data-page="schedule"><span>▦</span> Расписание</button>
+      <button class="nav-item" data-page="tasks"><span>✓</span> Задания</button>
+      <button class="nav-item" data-page="grades"><span>▤</span> Успеваемость</button>
+      <button class="nav-item" data-page="attendance"><span>◷</span> Посещаемость</button>
+      <button class="nav-item" data-page="library"><span>▣</span> Библиотека</button>
+      <button class="nav-item" data-page="chat"><span>☏</span> Сообщения</button>
+      <button class="nav-item" data-page="notifications"><span>♧</span> Уведомления <b id="sideCount"></b></button>
+      <button class="nav-item" data-page="profile"><span>♙</span> Мой профиль</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="progress-card"><div class="small-muted">ТВОЙ ПРОГРЕСС</div><strong>78%</strong><div class="progress-track"><div></div></div><div class="small-muted">Семестр почти завершён</div></div>
+      <div class="copyright">CAMPUS © 2026</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <div class="date-label">ЧЕТВЕРГ, 19 НОЯБРЯ 2026</div>
+        <h1 id="pageTitle">Доброе утро!</h1>
+        <p class="subtitle">Твой учебный день под контролем.</p>
+      </div>
+      <div class="top-actions">
+        <button id="topBell" class="bell" aria-label="Открыть уведомления" title="Уведомления">♧<i id="bellDot"></i></button>
+        <button class="profile-shortcut" data-page="profile"><span class="avatar">И</span><span id="topName">Илья</span></button>
+      </div>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
