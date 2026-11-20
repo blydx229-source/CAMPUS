@@ -2,17 +2,30 @@
 .library-hint{background:#f5f6ff;color:#6871b2;border-radius:10px;padding:12px;margin:12px 0;font-size:12px}.libitem{align-items:center;gap:14px}.libitem>div{flex:1}.material-content{font-size:14px;line-height:1.85;color:#3d4358;background:#f8f9fc;border:1px solid #eceef4;border-radius:12px;padding:20px;margin:20px 0;white-space:normal}.libitem .action{white-space:nowrap;font-size:12px;padding:9px 13px}
 .library-hint{background:#f5f6ff;color:#6871b2;border-radius:10px;padding:12px;margin:12px 0;font-size:12px}.libitem{align-items:center;gap:14px}.libitem>div{flex:1}.material-content{font-size:14px;line-height:1.85;color:#3d4358;background:#f8f9fc;border:1px solid #eceef4;border-radius:12px;padding:20px;margin:20px 0;white-space:normal}.libitem .action{white-space:nowrap;font-size:12px;padding:9px 13px}
 
-[hidden]{display:none!important}
-.auth-screen{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,#f4f5fb,#e9ecff)}
-.auth-card{width:min(100%,430px);background:#fff;border:1px solid #e8eaf2;border-radius:22px;padding:32px;box-shadow:0 18px 60px #29315a18}
-.auth-brand{display:flex;align-items:center;gap:12px;margin-bottom:30px;color:#20243a}
-.auth-brand b{display:block;font-size:20px;letter-spacing:1px}.auth-brand small{display:block;color:#9299aa;font-size:9px;letter-spacing:1px;margin-top:3px}
-.auth-logo{width:44px;height:44px;border-radius:14px;background:#5967dc;color:#fff;display:grid;place-items:center;font-size:25px;font-weight:800}
-.auth-card h1{font-size:25px;margin:0 0 7px}.auth-muted{color:#9299aa;font-size:13px;margin:0 0 24px}
-.auth-card label{display:block;font-size:12px;font-weight:600;margin:14px 0;color:#3d4358}
-.auth-card input{display:block;width:100%;margin-top:7px;padding:12px;border:1px solid #e0e3ed;border-radius:9px;font:inherit;outline:none}
-.auth-card input:focus{border-color:#5967dc;box-shadow:0 0 0 3px #5967dc1c}
-.auth-submit{width:100%;margin-top:12px;padding:13px}
-.auth-switch{display:block;margin:18px auto 0;border:0;background:none;color:#5967dc;cursor:pointer;font:inherit;font-size:13px}
-.auth-error{color:#c0394b;font-size:12px;min-height:18px}
-.auth-logout{margin-left:8px;border:1px solid #e2e5ed;background:#fff;padding:9px 12px;border-radius:9px;cursor:pointer}
+/* Интерактивные карточки расписания, посещаемости и объявлений */
+.lesson-click,.announcement-click,.attendance-card{font:inherit;text-align:left;color:inherit;cursor:pointer;width:100%;background:#fff;transition:border-color .15s,transform .15s}
+.lesson-click:hover,.announcement-click:hover,.attendance-card:hover{border-color:#aeb7f4;transform:translateY(-1px)}
+.open-arrow{display:block;color:#5967dc;font-size:11px;font-weight:600;margin-top:6px;white-space:nowrap}
+.announcement-click{border:0;border-left:3px solid #6976df;border-radius:0;padding:3px 0 3px 12px;margin:14px 0}
+.announcement-click:nth-of-type(2){border-left-color:#eab45b}
+.announcement-click:nth-of-type(3){border-left-color:#39b88b}
+.attendance-card{border:1px solid #e9eaf0}
+.attendance-card .metric{margin-top:0}
+
+/* Интерактивные оценки и статистика активности */
+.grade-subject{width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line,#e8ebf2);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;position:relative;padding:16px 8px;color:inherit;font:inherit}
+.grade-subject:hover{background:#f5f6ff}
+.grade-mark-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:12px;margin:18px 0}
+.grade-mark{border:1px solid #e5e8f1;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:7px;background:#fff}
+.grade-mark b{font-size:28px;color:#5967dc}
+.grade-mark span,.grade-mark small{font-size:12px;color:#8490a6}
+.activity-bar{display:block;flex:1;min-width:0;border:0;border-radius:7px 7px 0 0;background:#8988df;cursor:pointer;transition:background .18s ease,transform .18s ease,box-shadow .18s ease;padding:0}
+.activity-bar:hover,.activity-bar:focus-visible{background:#514fe0;transform:translateY(-4px);box-shadow:0 5px 16px #514fe044;outline:none}
+.activity-bar:active{transform:translateY(-1px)}
+.grade-subject .open-arrow{white-space:nowrap}
+@media(max-width:600px){.grade-subject{align-items:flex-start}.grade-subject .open-arrow{display:none}}
+
+/* Главные показатели — полноценные переходы в соответствующие разделы */
+.stat-card{font:inherit;text-align:left;color:inherit;cursor:pointer;width:100%;transition:border-color .18s,transform .18s,box-shadow .18s}
+.stat-card:hover,.stat-card:focus-visible{border-color:#aeb7f4;transform:translateY(-2px);box-shadow:0 8px 22px #28305b12;outline:none}
+.stat-card .open-arrow{margin-top:9px}
